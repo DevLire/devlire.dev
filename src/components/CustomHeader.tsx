@@ -24,7 +24,7 @@ import { DevLire } from './DevLire';
 
 const SiteLogo = () => (
   <Link
-    className="flex items-center justify-center transition-opacity hover:opacity-90"
+    className="flex items-center justify-center text-white transition-opacity hover:opacity-90"
     to="/"
   >
     <DevLire />
@@ -34,24 +34,37 @@ const SiteLogo = () => (
 const DesktopNav = ({ items }: { items: NavItem[] }) => {
   return (
     <NavigationMenu viewport={false}>
-      <NavigationMenuList>
+      <NavigationMenuList className="gap-1">
         {items.map((item) => (
           <NavigationMenuItem key={item.to || item.text} className="relative">
             {item.children && item.children.length > 0 ? (
               <>
-                <NavigationMenuTrigger className="text-muted-foreground hover:text-primary data-[state=open]:text-primary bg-transparent font-medium">
+                <NavigationMenuTrigger
+                  className={cn(
+                    'bg-transparent font-medium text-white transition-all duration-300',
+                    'rounded-full border border-transparent px-4 py-2',
+                    'hover:border-white/10 hover:bg-white/5 hover:text-emerald-400 hover:shadow-sm hover:backdrop-blur-md',
+                    'data-[state=open]:border-white/10 data-[state=open]:bg-white/5 data-[state=open]:text-emerald-400 data-[state=open]:backdrop-blur-md'
+                  )}
+                >
                   {item.text}
                 </NavigationMenuTrigger>
 
-                <NavigationMenuContent className="left-1/2 min-w-[180px] -translate-x-1/2">
-                  <ul className="min-w-[180px] space-y-1 p-2">
+                <NavigationMenuContent
+                  className={cn(
+                    'left-1/2 mt-2 min-w-[180px] -translate-x-1/2 overflow-hidden',
+                    'rounded-2xl border border-white/10 !bg-[#0a0a0a]/60 shadow-2xl !backdrop-blur-xl'
+                  )}
+                >
+                  <ul className="flex min-w-[180px] flex-col space-y-1 p-2">
                     {item.children.map((child) => (
                       <li key={child.to ?? child.text}>
                         <NavigationMenuLink asChild>
                           <Link
                             className={cn(
-                              'block rounded-md px-3 py-2 text-sm leading-none font-medium no-underline transition-colors outline-none select-none',
-                              'text-muted-foreground hover:text-primary focus:text-primary hover:bg-slate-100 focus:bg-slate-100'
+                              'block w-full rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-300 outline-none',
+                              'text-gray-300 hover:text-emerald-400',
+                              'hover:!bg-white/5'
                             )}
                             to={child.to ?? '#'}
                           >
@@ -67,7 +80,9 @@ const DesktopNav = ({ items }: { items: NavItem[] }) => {
               <Link to={item.to ?? '/'}>
                 <NavigationMenuLink
                   className={cn(
-                    'text-muted-foreground hover:text-primary cursor-pointer bg-transparent font-medium'
+                    'cursor-pointer bg-transparent font-medium text-white transition-all duration-300',
+                    'inline-flex items-center justify-center rounded-full border border-transparent px-4 py-2',
+                    'hover:border-white/10 hover:bg-white/5 hover:text-emerald-400 hover:shadow-sm hover:backdrop-blur-md'
                   )}
                 >
                   {item.text}
@@ -92,7 +107,7 @@ const MobileSheet = ({ items }: { items: NavItem[] }) => {
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button
-          className="text-muted-foreground hover:text-primary md:hidden"
+          className="rounded-full text-gray-300 transition-all duration-300 hover:bg-white/5 hover:text-emerald-400 md:hidden"
           size="icon"
           variant="ghost"
         >
@@ -102,38 +117,44 @@ const MobileSheet = ({ items }: { items: NavItem[] }) => {
       </SheetTrigger>
 
       <SheetContent
-        className="flex w-[300px] flex-col p-0 sm:w-[380px]"
+        className={cn(
+          'flex w-[300px] flex-col p-0 sm:w-[380px]',
+          'border-l border-white/10 !bg-[#0a0a0a]/80 shadow-2xl !backdrop-blur-2xl'
+        )}
         side="right"
       >
         {/* SHEET HEADER */}
-        <SheetHeader className="border-border/40 border-b bg-slate-50/50 px-6 pt-8 pb-6">
+        <SheetHeader className="border-b border-white/10 bg-transparent px-6 pt-8 pb-6">
           <SheetTitle className="sr-only">Navegación principal</SheetTitle>
           <div className="mb-2 flex justify-center">
             <div className="scale-100">
               <SiteLogo />
             </div>
           </div>
-          <p className="text-muted-foreground text-center text-xs font-medium tracking-wider uppercase">
+          <p className="text-center text-xs font-semibold tracking-wider text-emerald-500/70 uppercase">
             Menú de Navegación
           </p>
         </SheetHeader>
 
         {/* SHEET NAV */}
-        <nav className="flex flex-1 flex-col gap-6 overflow-y-auto px-6 py-6">
+        <nav className="custom-scrollbar flex flex-1 flex-col gap-6 overflow-y-auto px-6 py-6">
           {items.map((item, idx) => (
             <div key={idx} className="flex flex-col">
               {item.children ? (
                 <div className="space-y-3">
-                  <h4 className="text-foreground flex items-center gap-2 text-lg font-bold">
+                  <h4 className="flex items-center gap-2 text-lg font-bold text-white">
                     {item.text}
-                    <span className="bg-border/60 ml-2 h-px flex-1"></span>
+                    <span className="ml-2 h-px flex-1 bg-white/10"></span>
                   </h4>
 
-                  <div className="border-primary/10 ml-1 grid grid-cols-1 gap-2 border-l-2 pl-2">
+                  <div className="ml-1 grid grid-cols-1 gap-1 border-l border-white/10 pl-2">
                     {item.children.map((child) => (
                       <Link
                         key={child.to ?? child.text}
-                        className="group text-muted-foreground hover:text-primary flex items-center justify-between rounded-md px-3 py-2 text-base transition-all hover:bg-slate-50"
+                        className={cn(
+                          'group flex items-center justify-between rounded-xl px-3 py-2.5 text-base font-medium text-gray-300 transition-all duration-300',
+                          'hover:bg-white/5 hover:text-emerald-400 hover:shadow-sm hover:backdrop-blur-md'
+                        )}
                         to={child.to ?? '#'}
                         onClick={() => setIsOpen(false)}
                       >
@@ -144,7 +165,10 @@ const MobileSheet = ({ items }: { items: NavItem[] }) => {
                 </div>
               ) : (
                 <Link
-                  className="text-foreground hover:text-primary hover:border-border border-b border-transparent py-2 text-lg font-bold transition-colors"
+                  className={cn(
+                    'border-b border-transparent py-2 text-lg font-bold text-white transition-all duration-300',
+                    'inline-block w-max hover:border-emerald-500/30 hover:text-emerald-400'
+                  )}
                   to={item.to ?? '/'}
                   onClick={() => setIsOpen(false)}
                 >
@@ -156,17 +180,21 @@ const MobileSheet = ({ items }: { items: NavItem[] }) => {
         </nav>
 
         {/* SHEET FOOTER */}
-        <div className="border-border/40 mt-auto space-y-6 border-t bg-slate-50/50 p-6">
+        <div className="mt-auto space-y-6 border-t border-white/10 bg-transparent p-6">
           <div className="flex flex-col items-center gap-3">
             <Button
-              className="w-auto min-w-[160px] rounded-full bg-emerald-600 px-8 text-white shadow-lg shadow-emerald-600/20 hover:bg-emerald-700"
+              className={cn(
+                'w-auto min-w-[160px] rounded-full transition-all duration-300',
+                'border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 backdrop-blur-md',
+                'hover:border-emerald-400/40 hover:bg-emerald-500/20 hover:text-emerald-300 hover:shadow-[0_0_15px_rgba(16,185,129,0.2)]'
+              )}
               onClick={handleContactClick}
             >
               Contáctame
             </Button>
           </div>
 
-          <div className="flex justify-center gap-3">
+          <div className="flex justify-center gap-4">
             {[
               {
                 src: '/svgs/linkedin.svg',
@@ -182,13 +210,17 @@ const MobileSheet = ({ items }: { items: NavItem[] }) => {
               <a
                 key={idx}
                 aria-label={social.label}
-                className="group flex h-10 w-10 items-center justify-center rounded-lg border border-emerald-800 bg-emerald-900 text-emerald-100 transition-all duration-300 hover:bg-emerald-600 hover:text-white"
+                className={cn(
+                  'group flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300',
+                  'border border-white/10 bg-white/5 backdrop-blur-md',
+                  'hover:border-emerald-500/40 hover:bg-emerald-500/20'
+                )}
                 href={social.href}
                 target="_blank"
               >
                 <img
                   alt={social.label}
-                  className="h-5 w-5 object-contain brightness-0 grayscale invert filter transition-transform group-hover:scale-110"
+                  className="h-5 w-5 object-contain opacity-70 brightness-0 invert filter transition-all duration-300 group-hover:scale-110 group-hover:opacity-100"
                   src={social.src}
                 />
               </a>
@@ -202,7 +234,7 @@ const MobileSheet = ({ items }: { items: NavItem[] }) => {
 
 export const CustomHeader = () => {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-100 bg-white/80 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-white/5 shadow-lg shadow-black/20 backdrop-blur-xl backdrop-saturate-150">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -217,7 +249,11 @@ export const CustomHeader = () => {
         {/* Acciones */}
         <div className="flex items-center gap-4">
           <Button
-            className="hidden bg-emerald-600 text-white shadow-sm hover:bg-emerald-700 md:flex"
+            className={cn(
+              'hidden rounded-full transition-all duration-300 md:flex',
+              'border border-emerald-500/20 bg-emerald-500/10 text-emerald-400 backdrop-blur-md',
+              'hover:border-emerald-400/40 hover:bg-emerald-500/20 hover:text-emerald-300'
+            )}
             onClick={() =>
               window.open(
                 'https://www.linkedin.com/in/baruc-alejandria/',

@@ -1,12 +1,5 @@
 import { useState } from 'react';
-import {
-  Mail,
-  ExternalLink,
-  ChevronDown,
-  Briefcase,
-  Code2,
-  Terminal,
-} from 'lucide-react';
+import { Mail, ChevronDown, Briefcase, Code2 } from 'lucide-react';
 import { routesList } from '@/constants/routes.ts';
 import { Link } from 'react-router';
 import { DevLire } from './DevLire';
@@ -27,7 +20,7 @@ export const CustomFooter = () => {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* COLUMNA 1: Resumen */}
           <div className="flex flex-col space-y-6 lg:col-span-4">
-            <div className="flex animate-pulse items-center justify-center gap-3 text-6xl text-white">
+            <div className="flex animate-pulse cursor-default items-center justify-center gap-3 text-6xl text-white">
               <DevLire />
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-gray-400">

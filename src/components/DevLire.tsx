@@ -4,7 +4,7 @@ export const DevLire = () => {
   return (
     <div className="inline-flex items-center gap-2">
       <Terminal className="size-[1em]" />
-      <span>DevLire</span>
+      <span className="select-none">DevLire</span>
     </div>
   );
 };
