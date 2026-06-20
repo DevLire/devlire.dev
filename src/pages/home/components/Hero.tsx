@@ -1,4 +1,5 @@
 import { CustomCard } from '@/components/CustomCard';
+import { SectionTitle } from '@/components/SectionTitle';
 import { handleContactClick } from '@/handlers/handleContactClick';
 
 interface Props {
@@ -20,9 +21,7 @@ export const Hero = ({ id, openToWork }: Props) => {
                 <h1 className="mb-2 text-sm font-semibold tracking-wider text-emerald-400 uppercase">
                   DESARROLLADOR WEB & MOBILE
                 </h1>
-                <h2 className="font-red-hat-display text-4xl font-bold tracking-tight text-white lg:text-6xl">
-                  Hola, soy Baruc
-                </h2>
+                <SectionTitle text="Hola, soy Baruc" />
               </div>
               <p className="font-red-hat-display mx-auto max-w-lg text-base leading-relaxed text-gray-300 md:text-2xl">
                 Desarrollador{' '}
