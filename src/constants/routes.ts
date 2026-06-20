@@ -7,23 +7,23 @@ export interface NavItem {
 export const routesList: NavItem[] = [
   {
     text: 'Inicio',
-    to: '/#inicio',
+    to: '/',
   },
   {
-    text: 'Portafolio',
-    to: '/#portafolio',
+    text: 'Habilidades',
+    to: '/#skills',
   },
   {
     text: 'Proyectos',
     children: [
       {
         text: 'TechLogistics',
-        to: '/proyectos/techlogistics',
+        to: '/projects/techlogistics',
       },
     ],
   },
   {
     text: 'Sobre mí',
-    to: '/sobremi',
+    to: '#aboutme',
   },
 ];

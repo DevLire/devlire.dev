@@ -1,3 +1,13 @@
+import { Hero } from './components/Hero';
+import { Projects } from './components/Projects';
+import { Skills } from './components/Skills';
+
 export const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <Hero openToWork id="hero" />
+      <Skills id="skills" />
+      <Projects id="projects" />
+    </>
+  );
 };
