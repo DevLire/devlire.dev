@@ -1,6 +1,8 @@
 import { CustomCard } from '@/components/CustomCard';
 import { SectionTitle } from '@/components/SectionTitle';
 import { handleContactClick } from '@/handlers/handleContactClick';
+import { useHoverScaleAnimation } from '@/hooks/useHoverScaleAnimation';
+import { cn } from '@/lib/utils';
 
 interface Props {
   id?: string;
@@ -8,6 +10,9 @@ interface Props {
 }
 
 export const Hero = ({ id, openToWork }: Props) => {
+  const { isScaled, handleMouseEnter, handleMouseLeave } =
+    useHoverScaleAnimation();
+
   return (
     <section
       className="relative flex w-full scroll-mt-20 items-center justify-center overflow-hidden py-20 text-white md:py-12 2xl:py-32"
@@ -15,7 +20,14 @@ export const Hero = ({ id, openToWork }: Props) => {
     >
       <div className="relative z-10 container mx-auto px-4 lg:px-12">
         <div className="flex justify-center">
-          <CustomCard className="flex max-w-xl flex-col px-6 py-8 text-center md:max-w-2xl md:px-12 md:py-10">
+          <CustomCard
+            className={cn(
+              'flex max-w-xl flex-col px-6 py-8 text-center transition-transform duration-500 hover:scale-105 md:max-w-2xl md:px-12 md:py-10',
+              isScaled && 'scale-105'
+            )}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="grid gap-4 font-medium text-white lg:p-8">
               <div>
                 <h1 className="mb-2 text-sm font-semibold tracking-wider text-emerald-400 uppercase">
