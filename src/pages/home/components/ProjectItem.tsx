@@ -22,7 +22,7 @@ export const ProjectItem = ({ project, className }: Props) => {
       <CustomCard className="w-fit max-w-full p-2">
         <img
           alt={project.title}
-          className="h-auto max-w-full object-contain"
+          className="h-auto max-w-full rounded-3xl object-contain"
           src={project.src}
           width={430}
         />
