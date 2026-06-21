@@ -78,6 +78,24 @@ export const tailwindCssSkill: Skill = {
   iconColor: 'bg-[#06B6D4]',
 };
 
+export const cleanCodePrinciple: Skill = {
+  title: 'Código Limpio',
+  src: '/svgs/prettier.svg',
+  iconColor: 'bg-[#00F5D4]',
+};
+
+export const performancePrinciple: Skill = {
+  title: 'Rendimiento',
+  src: '/svgs/zap.svg',
+  iconColor: 'bg-[#FF007F]',
+};
+
+export const automationPrinciple: Skill = {
+  title: 'Automatización',
+  src: '/svgs/auto.svg',
+  iconColor: 'bg-[#FFB703]',
+};
+
 // Grupos
 export const primarySkills: Skill[] = [
   typescriptSkill,
@@ -95,4 +113,10 @@ export const secondarySkills: Skill[] = [
   nodeJsSkill,
   shadcnUiSkill,
   tailwindCssSkill,
+];
+
+export const principlesList: Skill[] = [
+  cleanCodePrinciple,
+  performancePrinciple,
+  automationPrinciple,
 ];

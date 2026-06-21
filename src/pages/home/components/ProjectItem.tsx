@@ -3,6 +3,7 @@ import { CustomCard } from '@/components/CustomCard';
 import { Button } from '@/components/ui/button';
 import type { Project } from '@/constants/projects';
 import { githubSkill } from '@/constants/skills';
+import { useHoverScaleAnimation } from '@/hooks/useHoverScaleAnimation';
 import { cn } from '@/lib/utils';
 import { ArrowRight, Code2, Lock } from 'lucide-react';
 
@@ -12,6 +13,9 @@ interface Props {
 }
 
 export const ProjectItem = ({ project, className }: Props) => {
+  const { isScaled, handleMouseLeave, handleMouseEnter } =
+    useHoverScaleAnimation();
+
   return (
     <div
       className={cn(
@@ -19,10 +23,17 @@ export const ProjectItem = ({ project, className }: Props) => {
         className
       )}
     >
-      <CustomCard className="w-fit max-w-full p-2">
+      <CustomCard
+        className={cn(
+          'w-fit max-w-full p-2 transition-transform duration-300',
+          isScaled && 'scale-110'
+        )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <img
           alt={project.title}
-          className="h-auto max-w-full object-contain"
+          className="h-auto max-w-full rounded-3xl object-contain"
           src={project.src}
           width={430}
         />

@@ -31,7 +31,7 @@ export const projects: Project[] = [
   {
     title: 'Migración de Arquitectura & Optimización de Estado',
     description:
-      'Me encargué de eliminar una deuda técnica, la cual consistia en el uso de fetch de JavaScript, escribiendo la url base de forma cruda en cada petición que se hacía, siendo tedioso de cambiar cada que se cambiada de entorno. Por ello, realicé la refactorización de más de 400 peticiones usando Axios y Zustand y variables de entorno para mejorar el rendimiento y la consistencia de datos',
+      'Eliminé la deuda técnica de un sistema migrando más de 400 peticiones crudas de JavaScript Fetch hacia una arquitectura centralizada con Axios, Zustand y variables de entorno. Con esto mejoré drásticamente la consistencia de los datos, el rendimiento de la aplicación y facilité la gestión de múltiples entornos de desarrollo.',
     skills: [reactSkill, typescriptSkill, axiosSkill, zustandSkill],
     src: '/svgs/refactor.svg',
     hasNDA: true,
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     title:
       'TechLogistics: Ecosistema Empresarial de Control Logístico y Seguridad Biométrica',
     description:
-      'Ecosistema integral desarrollado en un Monorepo con pnpm workspaces. Desarrollé una API RESTful en Node.js (TypeScript) con Prisma ORM y transacciones atómicas; un panel web administrativo en React con gráficos interactivos; y una aplicación móvil nativa con Expo que implementa Hardware Binding criptográfico y biometría local para la auditoría de accesos y la gestión de inventario en tiempo real.',
+      'Diseñé y construí un ecosistema empresarial completo. Programé una API RESTful con Node.js y transacciones atómicas en Prisma, un panel administrativo web en React con analíticas dinámicas, y un aplicativo móvil en Expo con biometría y bloqueo por hardware binding criptográfico.',
     skills: [
       reactSkill,
       reactNativeSkill,
@@ -66,7 +66,7 @@ export const projects: Project[] = [
   {
     title: 'Prototipo Funcional de Geolocalización',
     description:
-      'Desarrollé un aplicativo móvil con React Native para el control de asistencia. Implementé la API nativa de localización y un gestor que se aseguraba de que la app cuente en todo momento con el permiso de localización para su funcionamiento. El proyecto se consolidó como un MVP funcional de UI/UX debido a limitaciones en la integración del core backend.',
+      'Desarrollé el MVP móvil de una aplicación de control de asistencia utilizando React Native CLI. Implementé la integración nativa con la API de localización del dispositivo y diseñé un sistema de validación estricta de permisos en tiempo real. El software se consolidó como un prototipo funcional de UI/UX.',
     skills: [reactSkill, typescriptSkill, zustandSkill],
     src: '/svgs/asistencia.svg',
     hasNDA: true,
