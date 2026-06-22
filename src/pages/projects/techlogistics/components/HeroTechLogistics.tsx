@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Code2, Cpu } from 'lucide-react';
+import { Cpu } from 'lucide-react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { CustomBadge } from '@/components/CustomBadge';
 import { SectionLayout } from '@/components/SectionLayout';
@@ -13,8 +13,6 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel';
 import { FreshGif } from '@/components/FreshGifs';
-import { githubSkill } from '@/constants/skills';
-import { Button } from '@/components/ui/button';
 import { ProjectActions } from '@/components/ProjectActions';
 
 const slideVariants: Variants = {

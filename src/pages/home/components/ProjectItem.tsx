@@ -2,10 +2,9 @@ import { CustomBadge } from '@/components/CustomBadge';
 import { CustomCard } from '@/components/CustomCard';
 import { Button } from '@/components/ui/button';
 import type { Project } from '@/types/projects.interface';
-import { githubSkill } from '@/constants/skills';
 import { useHoverScaleAnimation } from '@/hooks/useHoverScaleAnimation';
 import { cn } from '@/lib/utils';
-import { ArrowRight, Code2, Lock } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import { ProjectActions } from '@/components/ProjectActions';
 
 interface Props {
