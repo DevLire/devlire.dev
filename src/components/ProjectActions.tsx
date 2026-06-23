@@ -2,6 +2,7 @@ import type { Project } from '@/types';
 import { Button } from './ui/button';
 import { githubSkill } from '@/constants/skills';
 import { Code2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router';
 
 interface Props {
   project: Project;
@@ -41,13 +42,8 @@ export const ProjectActions = ({ project, isProjectPage = false }: Props) => {
           Demo
         </Button>
         {project.links?.projectPage && !isProjectPage && (
-          <Button
-            className="w-fit bg-blue-700 px-5"
-            onClick={() =>
-              project.links?.demo && window.open(project.links.demo, '_blank')
-            }
-          >
-            Ver más
+          <Button className="w-fit bg-blue-700 px-5">
+            <Link to={project.links.projectPage}>Ver más</Link>
             <ArrowRight size={24} />
           </Button>
         )}
