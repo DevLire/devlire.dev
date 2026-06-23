@@ -30,7 +30,7 @@ export const AboutMe = ({ id }: BaseSectionProps) => {
                 Estudiante de Ing. de Software con IA en el SENATI, actualmente
                 culminé mi 5to ciclo. Apasionado por la programación desde los
                 14 años, empecé a programar con Python y Java, luego me aventuré
-                al desarrollo Frontend y decidí enfocearme a ello. Me gusta
+                al desarrollo Frontend y decidí enfocarme a ello. Me gusta
                 trabajar con TypeScript y React.
               </p>
               <p>
