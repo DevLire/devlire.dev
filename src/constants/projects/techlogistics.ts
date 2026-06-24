@@ -105,7 +105,6 @@ export const techLogisticsProject: Project = {
       images: [
         '/projects/techlogistics/techlogistics-backend-1.png',
         '/projects/techlogistics/techlogistics-backend-2.png',
-        '/projects/techlogistics/techlogistics-backend-1.png',
       ],
       isMobileView: false,
       badges: [
