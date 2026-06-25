@@ -90,7 +90,9 @@ export const WorkflowTechLogistics = ({ id }: BaseSectionProps) => {
     <SectionLayout id={id}>
       <SectionTitle icon={GitBranch} text="Flujo de la app" />
 
-      <div className="relative mt-8 h-[560px] w-full max-w-full overflow-hidden sm:h-[680px] md:h-[840px] [&_.react-flow__node]:pointer-events-none">
+      <div className="relative mt-8 h-[560px] w-full max-w-full overflow-hidden sm:h-[680px] md:h-[840px]">
+        <div className="absolute inset-0 z-50 h-full w-full" />
+
         <ReactFlow
           edges={edges}
           nodeTypes={NODE_TYPES}
