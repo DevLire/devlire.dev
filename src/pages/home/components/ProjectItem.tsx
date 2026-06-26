@@ -45,8 +45,8 @@ export const ProjectItem = ({ project, className }: Props) => {
         </h3>
 
         <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-          {project.skills.map((skill, index) => (
-            <CustomBadge key={index} skill={skill} />
+          {project.skills.map((skill) => (
+            <CustomBadge key={skill.title} skill={skill} />
           ))}
         </div>
 

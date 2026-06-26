@@ -1,23 +1,16 @@
 import type { BaseSectionProps } from '@/types';
+import { ObjetiveCard, type Objective } from '../../components/ObjetiveCard';
 import { SectionLayout } from '@/components/SectionLayout';
 import { SectionTitle } from '@/components/SectionTitle';
-import { CustomCard } from '@/components/CustomCard';
 import {
   Cog,
   FileWarning,
   GitFork,
   ShieldAlert,
   Smartphone,
-  type LucideIcon,
 } from 'lucide-react';
 
-interface Objectives {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-}
-
-const SYSTEM_OBJECTIVES: Objectives[] = [
+const SYSTEM_OBJECTIVES: Objective[] = [
   {
     title: 'Control de acceso',
     description:
@@ -60,17 +53,8 @@ export const ObjectivesTechLogistics = ({ id }: BaseSectionProps) => {
 
         {/* Bento Grid */}
         <div className="mt-5 grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:mt-8 lg:gap-2">
-          {SYSTEM_OBJECTIVES.map((problem) => (
-            <CustomCard className="flex w-full flex-col gap-2 p-3 lg:p-5">
-              <div className="flex items-center gap-2 text-xl md:gap-4">
-                <problem.icon className="size-6 shrink-0" />{' '}
-                <h4 className="font-red-hat-display leading-tight font-bold">
-                  {problem.title}
-                </h4>
-              </div>
-
-              <p>{problem.description}</p>
-            </CustomCard>
+          {SYSTEM_OBJECTIVES.map((objetive) => (
+            <ObjetiveCard key={objetive.title} objetive={objetive} />
           ))}
         </div>
       </div>
