@@ -57,7 +57,6 @@ export const ImageZoomModal = ({
             style={{
               imageRendering: 'auto',
               transform: 'translate3d(0px, 0px, 0px)',
-              willChange: 'transform',
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
             }}
