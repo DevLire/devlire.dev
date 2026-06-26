@@ -159,8 +159,8 @@ export const HeroTechLogistics = ({ id }: BaseSectionProps) => {
             </div>
 
             <div className="my-2 flex flex-row flex-wrap gap-2">
-              {techLogisticsProject.skills.map((skill, index) => (
-                <CustomBadge key={index} skill={skill} />
+              {techLogisticsProject.skills.map((skill) => (
+                <CustomBadge key={skill.title} skill={skill} />
               ))}
             </div>
 

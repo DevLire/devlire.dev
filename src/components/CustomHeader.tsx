@@ -139,8 +139,8 @@ const MobileSheet = ({ items }: { items: NavItem[] }) => {
 
         {/* SHEET NAV */}
         <nav className="custom-scrollbar flex flex-1 flex-col gap-6 overflow-y-auto px-6 py-6">
-          {items.map((item, idx) => (
-            <div key={idx} className="flex flex-col">
+          {items.map((item) => (
+            <div key={item.to ?? item.text} className="flex flex-col">
               {item.children ? (
                 <div className="space-y-3">
                   <h4 className="flex items-center gap-2 text-lg font-bold text-white">
@@ -207,9 +207,9 @@ const MobileSheet = ({ items }: { items: NavItem[] }) => {
                 label: 'GitHub',
                 href: 'https://github.com/devLire',
               },
-            ].map((social, idx) => (
+            ].map((social) => (
               <a
-                key={idx}
+                key={social.label}
                 aria-label={social.label}
                 className={cn(
                   'group flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300',

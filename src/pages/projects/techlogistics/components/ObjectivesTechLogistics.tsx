@@ -53,8 +53,8 @@ export const ObjectivesTechLogistics = ({ id }: BaseSectionProps) => {
 
         {/* Bento Grid */}
         <div className="mt-5 grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:mt-8 lg:gap-2">
-          {SYSTEM_OBJECTIVES.map((objetive, index) => (
-            <ObjetiveCard key={index} objetive={objetive} />
+          {SYSTEM_OBJECTIVES.map((objetive) => (
+            <ObjetiveCard key={objetive.title} objetive={objetive} />
           ))}
         </div>
       </div>

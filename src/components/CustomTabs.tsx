@@ -80,7 +80,7 @@ export const CustomTabs = ({ project }: Props) => {
                     <CarouselContent className="m-0 h-full w-full">
                       {content.images.map((imgUrl, idx) => (
                         <CarouselItem
-                          key={idx}
+                          key={imgUrl}
                           className="flex h-full items-center justify-center p-0"
                         >
                           <ImageZoomModal

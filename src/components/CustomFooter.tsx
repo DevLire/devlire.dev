@@ -43,8 +43,8 @@ export const CustomFooter = () => {
               Explorar
             </h3>
             <ul className="space-y-3">
-              {routesList.map((link, index) => (
-                <li key={index}>
+              {routesList.map((link) => (
+                <li key={link.to || link.text}>
                   {link.children ? (
                     <div className="space-y-1">
                       <button

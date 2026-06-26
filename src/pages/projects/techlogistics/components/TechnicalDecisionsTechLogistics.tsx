@@ -63,8 +63,11 @@ export const TechnicalDecisionsTechLogistics = ({ id }: BaseSectionProps) => {
 
       <div className="container max-w-6xl px-4 lg:px-12">
         <div className="flex flex-col gap-4">
-          {TECHNICALDECISIONS.map((decision, index) => (
-            <TechnicalDecisionRow key={index} technicalDecision={decision} />
+          {TECHNICALDECISIONS.map((decision) => (
+            <TechnicalDecisionRow
+              key={decision.decision}
+              technicalDecision={decision}
+            />
           ))}
         </div>
       </div>
