@@ -20,26 +20,6 @@ import {
 import { FreshGif } from '@/components/FreshGifs';
 import { ProjectActions } from '@/components/ProjectActions';
 
-const slideVariants: Variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? '100%' : '-100%',
-    opacity: 1,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
-  },
-  exit: (direction: number) => ({
-    x: direction > 0 ? '-80%' : '80%',
-    opacity: 0,
-    transition: {
-      x: { duration: 0.7, ease: [0.25, 1, 0.5, 1] },
-      opacity: { duration: 0.35, ease: 'easeOut' },
-    },
-  }),
-};
-
 const SLIDES_DATA = [
   {
     id: 'app',
